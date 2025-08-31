@@ -1,0 +1,5 @@
+# Created at 2025-08-31T14:57:08.579
+Boot Manifest-JAR contains absolute paths in classpath 'D:\Documentos\Encora\karate-serverest-usuarios-reto\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

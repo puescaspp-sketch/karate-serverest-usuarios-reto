@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"features\/usuarios\/usuarios-actualizar[1:9]","start":1756670231674,"end":1756670233319,"title":"features\/usuarios\/usuarios-actualizar[1:9] 14:57:11.674-14:57:13.319 Actualizar un usuario existente (200)"},{"id":2,"group":1,"content":"features\/usuarios\/usuarios-actualizar[2:24]","start":1756670233339,"end":1756670234667,"title":"features\/usuarios\/usuarios-actualizar[2:24] 14:57:13.339-14:57:14.667 Intentar actualizar con email ya usado (400)"},{"id":3,"group":1,"content":"features\/usuarios\/usuarios-crear[1:9]","start":1756670235859,"end":1756670236296,"title":"features\/usuarios\/usuarios-crear[1:9] 14:57:15.859-14:57:16.296 Crear usuario válido (201)"},{"id":4,"group":1,"content":"features\/usuarios\/usuarios-crear[2:17]","start":1756670236304,"end":1756670237740,"title":"features\/usuarios\/usuarios-crear[2:17] 14:57:16.304-14:57:17.740 No permitir email duplicado (400)"},{"id":5,"group":1,"content":"features\/usuarios\/usuarios-detalle[1:9]","start":1756670237913,"end":1756670238787,"title":"features\/usuarios\/usuarios-detalle[1:9] 14:57:17.913-14:57:18.787 Crear y consultar usuario por ID (200)"},{"id":6,"group":1,"content":"features\/usuarios\/usuarios-detalle[2:21]","start":1756670238809,"end":1756670239271,"title":"features\/usuarios\/usuarios-detalle[2:21] 14:57:18.809-14:57:19.271 Consultar usuario inexistente (400 o 404)"},{"id":7,"group":1,"content":"features\/usuarios\/usuarios-eliminar[1:9]","start":1756670239458,"end":1756670240317,"title":"features\/usuarios\/usuarios-eliminar[1:9] 14:57:19.458-14:57:20.317 Crear y eliminar usuario (200)"},{"id":8,"group":1,"content":"features\/usuarios\/usuarios-eliminar[2:21]","start":1756670240323,"end":1756670240750,"title":"features\/usuarios\/usuarios-eliminar[2:21] 14:57:20.323-14:57:20.750 Eliminar usuario inexistente (200 o 404 según API)"},{"id":9,"group":1,"content":"features\/usuarios\/usuarios-listar[1:7]","start":1756670240850,"end":1756670241529,"title":"features\/usuarios\/usuarios-listar[1:7] 14:57:20.850-14:57:21.529 Listar todos los usuarios (200)"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
